@@ -1,0 +1,51 @@
+.header {
+	background: url("../DSC07150.jpg");
+	background-position: -50% 50%;
+	background-attachment: fixed;
+	background-size: cover;
+	& .overlay{
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: linear-gradient(to left, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+		& .wrapper {
+			width: 50%;
+			/*background: rgba(255, 255, 255, 0.4);*/
+			/*background: rgba(156, 175, 183, 0.4);*/
+			background: rgba(84,110,122, 0.4);
+			margin: 10em 0;
+			box-sizing: border-box;
+			padding: 3rem;
+			color: rgba(255,255,255,0.6);
+			text-align: left;
+			& h1 {
+				font-family: var(--font-medium);
+				font-size: 10em;
+				margin: 0;
+			}
+			& span {
+				font-size: 3em;
+			}
+		}
+		& .floating {
+			/*background: rgba(156, 175, 183, 0.8);*/
+			background: rgba(255,255,255,0.4);
+			box-sizing: border-box;
+			position: absolute;
+			&[data-index="1"] {
+				left: 30%;
+				top: 65%;
+				height: 800px;
+				width: 300px;
+			}
+			&[data-index="2"] {
+				right: 10%;
+				top: 5%;
+				height: 300px;
+				width: 300px;
+			}
+		}
+	}
+}
