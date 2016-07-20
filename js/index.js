@@ -12,7 +12,7 @@ var App = Backbone.Cord.View.extend({
 				h('.overlay',
 					h('.wrapper',
 						h('h1', 'GRAHAM WONG'),
-						h('span', 'Updates shortly')
+						h('span', 'Updates coming soon!')
 					),
 					h('.floating', {'data-index': 1}, ''),
 					h('.floating', {'data-index': 2}, '')
