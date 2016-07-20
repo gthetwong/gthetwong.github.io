@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var pug = require('gulp-pug');
 var runSeq = require('run-sequence');
+var deploy = require('gulp-gh-pages');
 var destDir = 'build';
 var srcPaths = {
 	html: 'index.pug',
