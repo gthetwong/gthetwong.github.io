@@ -10,6 +10,7 @@ html, body {
 	height: 100%;
 	margin: 0 auto;
 	font-family: 'Proxima N W01 Light';
+	overflow: hidden;
 }
 section {
 	height: 100vh;
