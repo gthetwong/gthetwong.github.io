@@ -3,3 +3,4 @@ notes.md
 build/
 node_modules/
 jspm_packages/
+.publish

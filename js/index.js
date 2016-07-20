@@ -12,14 +12,12 @@ var App = Backbone.Cord.View.extend({
 				h('.overlay',
 					h('.wrapper',
 						h('h1', 'GRAHAM WONG'),
-						h('span', 'Unifying Art & Tech')
+						h('span', 'Updates shortly')
 					),
-					//these are ripe for some scrolling effects
 					h('.floating', {'data-index': 1}, ''),
 					h('.floating', {'data-index': 2}, '')
 				)
-			),
-			h('section.about')
+			)
 		);
 	}
 });

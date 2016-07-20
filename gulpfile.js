@@ -21,6 +21,8 @@ gulp.task('clean', function() {
 });
 
 gulp.task('html', function(){
+	gulp.src(['CNAME', 'README.md'])
+		.pipe(gulp.dest(destDir));
 	return gulp.src(srcPaths.html)
 	.pipe(pug({
 		pretty: true
@@ -41,14 +43,14 @@ gulp.task('styles', function() {
 		.pipe(gulp.dest(destPaths.styles));
 });
 
-
-gulp.task('bundle', function(){
+gulp.task('bundle', function(cb){
 	var Builder = require('systemjs-builder');
 	var builder = new Builder('./js/', 'config.js');
 	builder.reset();
 	builder.buildStatic('index.js', 'build/js/bundle.js', {sourceMaps: 'inline', runtime:false})
 	.then(function(){
-		console.log('Build Complete')
+		console.log('Build Complete');
+		cb(null);
 	})
 	.catch(function(err){
 		console.log(err);
@@ -56,12 +58,12 @@ gulp.task('bundle', function(){
 });
 
 gulp.task('assets', function(){
-	gulp.src(srcPaths.assets)
+	return gulp.src(srcPaths.assets)
 	.pipe(gulp.dest(destDir));
 });
 
 gulp.task('build', function(cb){
-	runSeq('clean', 'html', 'styles', 'bundle', 'assets', cb);
+	runSeq('clean', 'html', 'styles', 'bundle', 'assets',  cb);
 });
 
 gulp.task('watch', function(){
@@ -78,11 +80,10 @@ gulp.task('serve', ['build'], function(){
 });
 
 gulp.task('deploy', ['build'], function () {
-  return gulp.src("build/**")
-    .pipe(deploy({
-		branch: 'master',
-		push: true
-	}));
+	return gulp.src('build/**/*')
+		.pipe(deploy({
+			branch: 'master'
+		}));
 });
 
 // The default task
