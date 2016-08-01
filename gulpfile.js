@@ -67,7 +67,7 @@ gulp.task('build', function(cb){
 });
 
 gulp.task('watch', function(){
-	gulp.watch(srcPaths.styles, ['styles']);
+	gulp.watch('css/**', ['styles']);
 	gulp.watch(srcPaths.scripts, ['bundle']);
 });
 

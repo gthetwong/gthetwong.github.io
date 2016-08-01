@@ -9,14 +9,18 @@ var App = Backbone.Cord.View.extend({
 	el: function(h){
 		return h('main',
 			h('section.header',
-				h('.overlay',
-					h('.wrapper',
-						h('h1', 'GRAHAM WONG'),
-						h('span', 'Updates coming soon!')
-					),
-					h('.floating', {'data-index': 1}, ''),
-					h('.floating', {'data-index': 2}, '')
-				)
+				h('.header__name',
+					h('h1', 'GRAHAM'),
+					h('h1', 'WONG')),
+				h('img.header__photo', {src: '../background.jpg'}),
+				h('.header__title',
+					h('.title__wrapper',
+						h('h3', 'DESIGN'),
+						h('h3', '&'),
+						h('h3', 'DEVELOPMENT')
+					)
+				),
+				h('.header__decoration', '')
 			)
 		);
 	}

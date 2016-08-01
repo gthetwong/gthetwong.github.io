@@ -3,12 +3,16 @@ html, body {
 	height: 100%;
 	margin: 0 auto;
 	font-family: var(--font-light);
-	overflow: hidden;
 }
 
 section {
 	height: 100vh;
-	width: 100%;
-	padding: 1em;
+	width: 1440px;
+	margin: 0 auto;
+	padding: 60px;
 	box-sizing: border-box;
+}
+
+@media screen and (max-width: 1440px){
+
 }

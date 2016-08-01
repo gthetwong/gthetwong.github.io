@@ -1,51 +1,62 @@
 .header {
-	background: url("../DSC07150.jpg");
-	background-position: -50% 50%;
-	background-attachment: fixed;
-	background-size: cover;
-	& .overlay{
-		height: 100%;
-		width: 100%;
+	position: relative;
+	&__name {
 		position: absolute;
-		top: 0;
-		left: 0;
-		background: linear-gradient(to left, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
-		& .wrapper {
-			width: 50%;
-			/*background: rgba(255, 255, 255, 0.4);*/
-			/*background: rgba(156, 175, 183, 0.4);*/
-			background: rgba(84,110,122, 0.4);
-			margin: 10em 0;
-			box-sizing: border-box;
-			padding: 3rem;
-			color: rgba(255,255,255,0.6);
-			text-align: left;
-			& h1 {
-				font-family: var(--font-medium);
-				font-size: 10em;
-				margin: 0;
-			}
-			& span {
+		top: 60px;
+		left: 160px;
+		z-index: 2;
+		& h1 {
+			font-size: 8rem;
+			font-family: var(--font-black);
+			text-align: right;
+			margin: 0;
+		}
+	}
+	&__photo {
+		position: absolute;
+		top: 135px;
+		right: 5%;
+		width: 55%;
+		z-index: 1;
+	}
+	&__title {
+		position: absolute;
+		left: 160px;
+		top: 700px;
+		height: 200px;
+		width: 500px;
+		padding: 2em;
+		background: rgba(2,17,27,0.9);
+		z-index: 2;
+		&::before {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+		}
+		& .title__wrapper {
+			display:inline-block;
+			vertical-align: middle;
+			margin-left: 1em;
+			& h3 {
 				font-size: 3em;
+				font-family: var(--font-light);
+				font-weight: 300;
+				color: #ffffff;
+				margin: 0;
+				&:nth-of-type(2){
+					font-family: var(--font-bold);
+				}
 			}
 		}
-		& .floating {
-			/*background: rgba(156, 175, 183, 0.8);*/
-			background: rgba(255,255,255,0.4);
-			box-sizing: border-box;
-			position: absolute;
-			&[data-index="1"] {
-				left: 30%;
-				top: 65%;
-				height: 800px;
-				width: 300px;
-			}
-			&[data-index="2"] {
-				right: 10%;
-				top: 5%;
-				height: 300px;
-				width: 300px;
-			}
-		}
+	}
+	&__decoration {
+		position: absolute;
+		top: 250px;
+		left: 100px;
+		height: 100px;
+		width: 750px;
+		background: #FCED20;
+		transform: skewY(-30deg);
 	}
 }
