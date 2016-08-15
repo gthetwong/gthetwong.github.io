@@ -1,0 +1,22 @@
+.sidebar {
+	lost-column: 1/12;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	border-right: 1px solid var(--dark-grey);
+	box-sizing: border-box;
+	/*transform: translate(-100%);*/
+	&__icon {
+		height: 50px;
+		width: 50px;
+		margin: 20px auto;
+		border-radius: 100%;
+		border: 1px solid var(--dark-grey);
+		color: var(--dark-grey);
+		display:block;
+		text-align: center;
+		line-height: 50px;
+		vertical-align: middle;
+	}
+}

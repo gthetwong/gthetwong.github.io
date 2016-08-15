@@ -1,16 +1,33 @@
+@lost gutter 20px;
+:root {
+	--dark-grey: #5E6472;
+}
+
 html, body {
 	width: 100%;
 	height: 100%;
 	margin: 0 auto;
-	font-family: var(--font-light);
+	font-family: var(--font-family);
+	font-weight: 300;
+	color: var(--dark-grey);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+main {
+	lost-center: 1280px;
+	/*lost-utility: edit;*/
+	margin: 0 auto;
 }
 
 section {
-	height: 100vh;
-	width: 1440px;
-	margin: 0 auto;
-	padding: 60px;
-	box-sizing: border-box;
+	lost-utility: clearfix;
+	/*padding: 60px;*/
+	/*border: 1px solid grey;*/
+}
+
+h1 {
+	font-weight: 700;
 }
 
 @media screen and (max-width: 1440px){

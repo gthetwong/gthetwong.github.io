@@ -36,8 +36,9 @@ gulp.task('styles', function() {
 	var cssmixins = require('postcss-mixins');
 	var cssimport = require('postcss-import');
 	var cssreporter = require('postcss-reporter');
+	var lost = require('lost');
 
-	var processors = [cssimport(), cssmixins, cssnext(), cssreporter()];
+	var processors = [cssimport(), cssmixins, cssnext(), lost(), cssreporter()];
 	return gulp.src('css/app.css')
 		.pipe(postcss(processors))
 		.pipe(gulp.dest(destPaths.styles));

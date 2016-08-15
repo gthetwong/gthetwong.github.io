@@ -1,4 +1,6 @@
 @import "fonts.css";
 @import "base.css";
+@import "layouts/sidebar.css";
 @import "layouts/header.css";
 @import "layouts/about.css";
+@import "layouts/work.css";
