@@ -8,15 +8,16 @@
 	box-sizing: border-box;
 	/*transform: translate(-100%);*/
 	&__icon {
+		display:block;
 		height: 50px;
 		width: 50px;
 		margin: 20px auto;
-		border-radius: 100%;
-		border: 1px solid var(--dark-grey);
 		color: var(--dark-grey);
-		display:block;
+		font-size: 20px;
 		text-align: center;
 		line-height: 50px;
 		vertical-align: middle;
+		border-radius: 100%;
+		border: 1px solid var(--dark-grey);
 	}
 }

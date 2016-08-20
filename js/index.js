@@ -21,11 +21,18 @@ var App = Backbone.Cord.View.extend({
 				h('img.header__photo', {src: '../background.jpg'})
 			),
 			h('section.about',
-				h('.about__tagline',
-					h('h1', '// A LITTLE ABOUT ME'),
-					h('h3', 'Good thing I get to do it for a living.')),
-				h('p.about__bio', "My name is Graham. I’m a designer and developer from San Francisco. Since I was a youngster, I’ve been intrigued by making things and taking things apart. Now that I’m older, I’m constantly trying to find new ways to keep that curiousity alive and unify my interests in art and technology. I’m super passionate about User Centered Design, Don Norman, and pretty much all things web. And even though most of my work is digital now, I still occasionally enjoy making things by hand.")
-			),
+				h('.about__wrapper',
+					h('.tagline',
+						h('h1', '// A bit about me')),
+					h('.bio',
+						h('h2', "I’m a designer and developer,"),
+						h('.blockquote',
+							h('p', "born and raised in San Francisco. I’ve been making and taking things apart for as long as I can remember. I’m constantly trying to find new ways to keep that curiousity alive and unify my interests in art and technology. I’m super passionate about understanding complex systems, User Centered Design, Don Norman, and pretty much all things web."),
+							h('p', "Most of my work these days is digital, but I still occasionally make things by hand. You can see some of my work below!")))),
+				h('.about__lead'),
+				h('.about__skills',
+					h('h1', '// Skills')
+				)),
 			h('section.work',
 				h('h1', 'Work // In Progress')
 			)

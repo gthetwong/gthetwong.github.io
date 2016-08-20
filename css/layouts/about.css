@@ -1,3 +1,32 @@
 .about {
-	
+	&__wrapper {
+		lost-column: 5/8;
+		& .tagline {
+			lost-column: 3/5 1;
+		}
+		& .bio {
+			lost-column: 4/5;
+			& h2 {
+				margin: 0;
+				font-size: 45px;
+				font-weight: 300;
+			}
+			& .blockquote {
+				margin: 0;
+				border-left: 10px solid #ccc;
+				padding-left: 20px;
+				font-size: 18px;
+			}
+		}
+	}
+	&__lead {
+		lost-column: 1/8 ;
+		height: 800px;
+		background: #ccc;
+	}
+	&__skills {
+		lost-column: 3/16 3;
+		& h1 {
+		}
+	}
 }

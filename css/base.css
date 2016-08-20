@@ -2,6 +2,10 @@
 :root {
 	--dark-grey: #5E6472;
 }
+* {
+	border: 1px solid grey;
+	/*lost-utility: edit;*/
+}
 
 html, body {
 	width: 100%;
@@ -16,18 +20,16 @@ html, body {
 
 main {
 	lost-center: 1280px;
-	/*lost-utility: edit;*/
-	margin: 0 auto;
 }
 
 section {
 	lost-utility: clearfix;
-	/*padding: 60px;*/
-	/*border: 1px solid grey;*/
 }
 
 h1 {
+	font-size: 50px;
 	font-weight: 700;
+	text-transform: uppercase;
 }
 
 @media screen and (max-width: 1440px){
