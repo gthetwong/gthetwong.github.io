@@ -1,8 +1,10 @@
 .about {
+	position: relative;
 	&__wrapper {
 		lost-column: 5/8;
 		& .tagline {
 			lost-column: 3/5 1;
+			text-align: center;
 		}
 		& .bio {
 			lost-column: 4/5;
@@ -20,13 +22,42 @@
 		}
 	}
 	&__lead {
-		lost-column: 1/8 ;
-		height: 800px;
-		background: #ccc;
+		lost-column: 1/8;
+		height: 960px;
+		position: relative;
+		right: 150px;
+		background: #f1f1f1;
+		z-index: -1;
 	}
 	&__skills {
-		lost-column: 3/16 3;
+		lost-column: 3/8 1;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		/*transform: translate(-50px, -225%);*/
 		& h1 {
+			font-weight: 300;
+			text-transform: none;
+			font-size: 40px;
+		}
+		& .skills {
+			/*background: #fff;*/
+			& .skill {
+				position:relative;
+				display:inline-block;
+				height: 100px;
+				width: 100px;
+				line-height: 100px;
+				vertical-align: middle;
+				z-index: 1;
+				text-align: center;
+				border: 1px solid #ccc;
+				& h3 {
+					display: inline-block;
+					margin: 0;
+					padding: 0;
+				}
+			}
 		}
 	}
 }
