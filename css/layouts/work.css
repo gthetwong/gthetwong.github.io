@@ -1,2 +1,26 @@
 .work {
+	position: relative;
+	top: -250px;
+	& .grid {
+		lost-column: 3/4;
+		lost-offset: -1/8;
+		lost-utility: clearfix;
+		& .item {
+			position: relative;
+			height: 300px;
+			lost-column: 1/2 2 0px;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+			& .title {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				padding: 2em;
+				font-size: 24px;
+			}
+		}
+		& .item:nth-child(2n){
+			top: 100px;
+		}
+	}
 }
