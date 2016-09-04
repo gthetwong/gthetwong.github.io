@@ -6,7 +6,7 @@
 	left: 0;
 	border-right: 1px solid var(--dark-grey);
 	box-sizing: border-box;
-	transform: translate(-100%);
+	/*transform: translate(-100%);*/
 	&__icon {
 		display:block;
 		height: 50px;
