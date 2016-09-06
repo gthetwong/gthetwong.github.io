@@ -7,6 +7,6 @@ module.exports = Backbone.Cord.View.extend({
 				h('h1', 'Wong'),
 				h('h3', 'I love making things.'),
 				h('h4', 'Good thing I get to do it for a living.')),
-			h('img.header__photo', {src: '../background.jpg'}));
+			h('img.header__photo', {src: 'assets/background.jpg'}));
 	}
 });

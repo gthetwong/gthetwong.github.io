@@ -5,11 +5,13 @@
       "backbone.cord": "npm:backbone.cord@^1.0.10",
       "jquery": "npm:jquery@^3.0.0",
       "progressbar": "npm:progressbar.js@^1.0.1",
+      "three": "npm:three@^0.80.1",
       "underscore": "npm:underscore@^1.8.3"
     },
     "devDependencies": {}
   },
   "devDependencies": {
+    "cssnano": "^3.7.4",
     "del": "^2.2.1",
     "gulp": "^3.9.1",
     "gulp-connect": "^4.1.0",

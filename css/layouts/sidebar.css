@@ -6,7 +6,7 @@
 	left: 0;
 	border-right: 1px solid var(--dark-grey);
 	box-sizing: border-box;
-	/*transform: translate(-100%);*/
+	background: #fff;
 	&__icon {
 		display:block;
 		height: 50px;
@@ -25,5 +25,8 @@
 			font-size: 30px;
 			transition: font-size .125s ease;
 		}
+	}
+	@media screen and (max-width:1550px){
+		transform: translate(-100%);
 	}
 }

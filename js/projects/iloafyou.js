@@ -1,7 +1,6 @@
 var THREE = require('three');
-//add Orbit Controls
-// module.exports = 
-(function(){
+
+module.exports = function(){
 	var scene = new THREE.Scene();
 	var container = document.getElementById("canvas");
 
@@ -44,4 +43,4 @@ var THREE = require('three');
 
 	render();
 
-})();
+};

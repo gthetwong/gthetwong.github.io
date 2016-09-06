@@ -36,9 +36,10 @@ gulp.task('styles', function() {
 	var cssmixins = require('postcss-mixins');
 	var cssimport = require('postcss-import');
 	var cssreporter = require('postcss-reporter');
+	var cssnano = require('cssnano');
 	var lost = require('lost');
 
-	var processors = [cssimport(), cssmixins, cssnext(), lost(), cssreporter()];
+	var processors = [cssimport(), cssmixins, cssnext(), lost(), cssreporter(), cssnano({autoprefixer: false})];
 	return gulp.src('css/app.css')
 		.pipe(postcss(processors))
 		.pipe(gulp.dest(destPaths.styles));
@@ -60,11 +61,11 @@ gulp.task('bundle', function(cb){
 
 gulp.task('assets', function(){
 	return gulp.src(srcPaths.assets)
-	.pipe(gulp.dest(destDir));
+	.pipe(gulp.dest(destDir + '/assets'));
 });
 
 gulp.task('build', function(cb){
-	runSeq('clean', 'html', 'styles', 'bundle', 'assets',  cb);
+	runSeq('clean', 'html', 'bundle', 'assets', 'styles', cb);
 });
 
 gulp.task('watch', function(){

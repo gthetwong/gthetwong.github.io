@@ -13,11 +13,12 @@ module.exports = Backbone.Cord.View.extend({
 					h('.title', 'Loaf at first sight')),
 				h('.item',
 					h('.title', 'Secret Life of My Pet'))
-			));
+			)
+		);
 	},
 	hover: function(e){
 		console.log(e);
 
-		// projects[e.target.getAttribute('data-project')];
+		var project = projects[e.target.getAttribute('data-project')];
 	}
 });

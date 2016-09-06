@@ -21,19 +21,11 @@
 			}
 		}
 	}
-	&__lead {
-		lost-column: 1/8;
-		height: 1080px;
-		position: relative;
-		right: 150px;
-		background: #f1f1f1;
-		z-index: -1;
-	}
 	&__skills {
 		lost-column: 3/8 1;
 		position: absolute;
 		right: 0;
-		top: 30%;
+		top: 35%;
 		padding-left: 50px;
 		box-sizing: border-box;
 		& h1 {
@@ -62,5 +54,13 @@
 				}
 			}
 		}
+	}
+	&__lead {
+		lost-column: 1/8;
+		height: 1080px;
+		position: relative;
+		right: 150px;
+		background: #f1f1f1;
+		z-index: -1;
 	}
 }

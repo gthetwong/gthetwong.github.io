@@ -1,5 +1,5 @@
-var iloafyou = require('iloafyou');
+var iLoafYou = require('projects/iloafyou');
 
 module.exports = {
-	iloafyou: iloafyou
-}
+	iLoafYou: iLoafYou
+};
