@@ -2,6 +2,8 @@ var gulp = require('gulp');
 var pug = require('gulp-pug');
 var runSeq = require('run-sequence');
 var deploy = require('gulp-gh-pages');
+var Builder = require('systemjs-builder');
+var builder = new Builder('./js/', 'config.js');
 var destDir = 'build';
 var srcPaths = {
 	html: 'index.pug',
@@ -39,17 +41,17 @@ gulp.task('styles', function() {
 	var cssnano = require('cssnano');
 	var lost = require('lost');
 
-	var processors = [cssimport(), cssmixins, cssnext(), lost(), cssreporter(), cssnano({autoprefixer: false})];
+	var processors = [cssimport(), cssmixins, cssnext(), lost(), cssreporter(), cssnano({sourceMaps: true, autoprefixer: false})];
 	return gulp.src('css/app.css')
 		.pipe(postcss(processors))
 		.pipe(gulp.dest(destPaths.styles));
 });
 
 gulp.task('bundle', function(cb){
-	var Builder = require('systemjs-builder');
-	var builder = new Builder('./js/', 'config.js');
-	builder.reset();
-	builder.buildStatic('index.js', 'build/js/bundle.js', {sourceMaps: 'inline', runtime:false})
+	gulp.src(['jspm_packages/system.js', 'config.js'])
+	.pipe(gulp.dest(destPaths.scripts));
+	builder.bundle('index.js', 'build/js/bundle.js', {sourceMaps: 'inline', runtime:false});
+	builder.bundle('projects/iloafyou.js', 'build/js/projects/iloafyou.js', {sourceMaps: 'inline', runtime:false})
 	.then(function(){
 		console.log('Build Complete');
 		cb(null);

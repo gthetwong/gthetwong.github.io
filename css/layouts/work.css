@@ -5,10 +5,11 @@
 		lost-column: 3/4;
 		lost-offset: -1/8;
 		lost-utility: clearfix;
-		& .item {
+		&__item {
 			position: relative;
 			height: 300px;
 			lost-column: 1/2 2 0px;
+			background: #fff;
 			border: 1px solid #ccc;
 			box-sizing: border-box;
 			& .title {
@@ -19,8 +20,32 @@
 				font-size: 24px;
 			}
 		}
-		& .item:nth-child(2n){
+		&__item:nth-child(2n){
 			top: 100px;
+			left: -1px;
+		}
+	}
+	& .preview {
+		lost-column: 1/2 0 0px;
+		height: 850px;
+		background: #fff;
+		border: 1px solid #ccc;
+		position: absolute;
+		background-size: contain;
+		&__left {
+			right: 0;
+			transform: translate(-500%);
+			transition: transform .25s ease;
+		}
+		&__right {
+			left: 0;
+			transform: translate(500%);
+			transition: transform .25s ease;
+		}
+		&.is-active {
+			transform: translate(0);
+			transition: transform .25s ease;
+			z-index: 1;
 		}
 	}
 }
