@@ -25,27 +25,4 @@
 			left: -1px;
 		}
 	}
-	& .preview {
-		lost-column: 1/2 0 0px;
-		height: 850px;
-		background: #fff;
-		border: 1px solid #ccc;
-		position: absolute;
-		background-size: contain;
-		&__left {
-			right: 0;
-			transform: translate(-500%);
-			transition: transform .25s ease;
-		}
-		&__right {
-			left: 0;
-			transform: translate(500%);
-			transition: transform .25s ease;
-		}
-		&.is-active {
-			transform: translate(0);
-			transition: transform .25s ease;
-			z-index: 1;
-		}
-	}
 }

@@ -1,0 +1,35 @@
+@keyframes anim-effect-3-1 {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+	25%, 75% {
+		transform: translate3d(0, -100%, 0);
+		animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+	}
+	100% {
+		transform: translate3d(0, -200%, 0);
+	}
+}
+
+@keyframes anim-effect-3-2 {
+	0%, 12.5% {
+		transform: translate3d(0, 0, 0);
+	}
+	37.5%, 62.5% {
+		transform: translate3d(0, -100%, 0);
+		animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+	}
+	87.5%, 100% {
+		transform: translate3d(0, -200%, 0);
+	}
+}
+
+@keyframes anim-effect-3-3 {
+	0%, 25% {
+		transform: translate3d(0, 0, 0);
+		animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+	}
+	75%, 100% {
+		transform: translate3d(0, -200%, 0);
+	}
+}
