@@ -3,16 +3,17 @@ System.config({
   defaultJSExtensions: true,
   transpiler: false,
   paths: {
-    "github:*": "./jspm_packages/github/*",
-    "npm:*": "./jspm_packages/npm/*"
+    "github:*": "jspm_packages/github/*",
+    "npm:*": "jspm_packages/npm/*"
   },
 
   map: {
     "backbone": "npm:backbone@1.3.3",
     "backbone.cord": "npm:backbone.cord@1.0.10",
     "jquery": "npm:jquery@3.0.0",
+    "mrdoob/three.js": "github:mrdoob/three.js@master",
     "progressbar": "npm:progressbar.js@1.0.1",
-    "three": "npm:three@0.80.1",
+    "three": "github:mrdoob/three.js@master",
     "underscore": "npm:underscore@1.8.3",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
@@ -75,13 +76,6 @@ System.config({
     },
     "npm:shifty@1.5.2": {
       "process": "github:jspm/nodelibs-process@0.1.2"
-    },
-    "npm:three@0.80.1": {
-      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "fs": "github:jspm/nodelibs-fs@0.1.2",
-      "path": "github:jspm/nodelibs-path@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.2"
     },
     "npm:util@0.10.3": {
       "inherits": "npm:inherits@2.0.1",

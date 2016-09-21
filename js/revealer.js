@@ -1,6 +1,6 @@
 //Some help on the reveal transitions from http://tympanus.net/codrops/2016/06/01/multi-layer-page-reveal-effects/
 
-var Modernizr = require('modernizr');
+var Modernizr = require('js/modernizr');
 'use strict';
 var winsize = { width : window.innerWidth, height : window.innerHeight };
 var support = { animations : Modernizr.cssanimations };

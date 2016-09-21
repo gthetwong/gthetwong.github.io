@@ -1,6 +1,6 @@
 var _ = require('underscore');
 var Backbone = require('backbone');
-var Revealer = require('revealer');
+var Revealer = require('js/revealer');
 var revealer = new Revealer();
 
 module.exports = Backbone.Cord.View.extend({
@@ -33,8 +33,8 @@ module.exports = Backbone.Cord.View.extend({
 	leave: function(e){
 	},
 	openProject: function(e){
-		System.import('js/projects/iloafyou');
-		var project = require('projects/iloafyou');
+		System.import('projects/iloafyou/index');
+		var project = require('projects/iloafyou/iloafyou');
 		this.frame = document.createElement('div');
 		this.frame.className = 'frame';
 		document.body.appendChild(this.frame);
