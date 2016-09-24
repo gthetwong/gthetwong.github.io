@@ -1,6 +1,5 @@
 var Backbone = require('backbone');
 require('backbone.cord');
-var ProgressBar = require('progressbar');
 
 module.exports = Backbone.Cord.View.extend({
 	className: 'about',

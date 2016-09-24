@@ -59,7 +59,7 @@ gulp.task('bundle', function(cb){
 	gulp.src(['jspm_packages/system.js', 'config.js'])
 	.pipe(gulp.dest('build/'));
 	var builder = new Builder('./', 'config.js');
-	builder.bundle('js/index.js', 'build/js/bundle.js', {sourceMaps: 'inline', runtime:false})
+	builder.bundle('js/index.js', 'build/js/bundle.js', { minify: true, mangle: true, sourceMaps: 'inline', runtime: false})
 	.then(function(){
 		console.log('Website Build Complete');
 		cb(null);
@@ -79,12 +79,13 @@ gulp.task('projects', function(cb){
 		gulp.src([projectFolder + '/*.*', '!' + projectFolder + '/*.css', '!' + projectFolder + '/*.js'])
 			.pipe(gulp.dest('build/' + projectFolder));
 		// build project styles
-		var processors = [cssimport(), cssmixins, cssnext(), lost(), cssreporter(), cssnano({sourceMaps: true, autoprefixer: false})];
+		var processors = [cssimport(), cssmixins, cssnext(), lost(), cssreporter(), cssnano({autoprefixer: false})];
 		gulp.src(projectFolder + '/*.css')
 			.pipe(postcss(processors))
 			.pipe(gulp.dest('build/' + projectFolder));
 		// bundle project scripts
-		builder.bundle(projectFolder + '/*.js', 'build/' + projectFolder + '/index.js').then(function(){
+		builder.bundle(projectFolder + '/*.js', 'build/' + projectFolder + '/index.js', { minify: true, mangle: true, sourceMaps: 'inline', runtime: false})
+		.then(function(){
 			console.log('Project: ' + folder + ' – completed');
 			callback(null);
 		});

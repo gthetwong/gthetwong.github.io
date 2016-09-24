@@ -6,7 +6,14 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
-
+  meta: {
+	'three/examples/js/controls/OrbitControls.js': {
+		format: 'cjs',
+		globals: {
+			THREE: 'mrdoob/three.js'
+		}
+	}
+  },
   map: {
     "backbone": "npm:backbone@1.3.3",
     "backbone.cord": "npm:backbone.cord@1.0.10",

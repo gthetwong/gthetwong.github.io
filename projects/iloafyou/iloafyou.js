@@ -1,18 +1,18 @@
 var THREE = require('three');
+require('three/examples/js/controls/OrbitControls');
 module.exports.inject = function(){
 	var scene = new THREE.Scene();
 	var container = document.body.querySelector('.frame');
-
-	var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 1, 1000);
-	camera.position.z = 10;
-
-	// controls = new THREE.OrbitControls( camera );
-	// controls.addEventListener( 'change', render );
-
 	var renderer = new THREE.WebGLRenderer();
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	renderer.setClearColor( 0xffffff, 1);
 	container.appendChild(renderer.domElement);
+
+	var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 1, 1000);
+	camera.position.z = 10;
+
+	controls = new THREE.OrbitControls( camera, renderer.domElement );
+	controls.addEventListener( 'change', render );
 
 	var light = new THREE.DirectionalLight( 0xffffff, 1.5);
 	light.position.set(0,0,1);
@@ -28,12 +28,8 @@ module.exports.inject = function(){
 		bread.rotation.x = .4;
 		bread.position.y = -2;
 	});
-	var render = function() {
-		var timer = Date.now() * 0.0005;
-		camera.position.x = Math.cos( timer ) * 10;
-		camera.position.y = 4;
-		camera.position.z = Math.sin( timer ) * 10;
-		camera.lookAt( scene.position );
+
+	var render = function () {
 		requestAnimationFrame(render);
 		renderer.render(scene, camera);
 	};

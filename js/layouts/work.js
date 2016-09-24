@@ -9,8 +9,7 @@ module.exports = Backbone.Cord.View.extend({
 		'mouseleave .grid__item': 'leave',
 		'click .grid__item': function(e) {
 			e.preventDefault();
-			// this.reveal(e.target.getAttribute('data-side'));
-			this.reveal('right');
+			this.reveal({direction: e.target.getAttribute('data-side'), project: e.target.getAttribute('data-project')});
 		}
 	},
 	el: function(h, v){
@@ -32,24 +31,25 @@ module.exports = Backbone.Cord.View.extend({
 	},
 	leave: function(e){
 	},
-	openProject: function(e){
-		System.import('projects/iloafyou/index');
-		var project = require('projects/iloafyou/iloafyou');
-		this.frame = document.createElement('div');
-		this.frame.className = 'frame';
-		document.body.appendChild(this.frame);
-		project.inject();
-		this.frame.addEventListener('click', function(){
-			this.hide('left');
+	openProject: function(projectName){
+		System.import('projects/' + projectName + '/index').then(function(){
+			System.import('projects/' + projectName + '/' + projectName + '.js').then(function(project){
+				this.frame = this._el('.frame', this._el('i.fa.fa-times.fa-2x.exit'));
+				document.body.appendChild(this.frame);
+				project.inject();
+				this.frame.querySelector('.exit').addEventListener('click', function(){
+					this.hide('left');
+				}.bind(this));
+			}.bind(this));
 		}.bind(this));
 	},
-	reveal: function(direction){
+	reveal: function(options){
 		var callbackTime = 750,
 			callbackFn = function() {
-				this.openProject();
+				this.openProject(options.project);
 			}.bind(this);
 		revealer.revealerWrapper.style.visibility = 'visible';
-		revealer.reveal(direction, callbackTime, callbackFn);
+		revealer.reveal(options.direction, callbackTime, callbackFn);
 	},
 	hide: function(direction) {
 		var callbackTime = 750,
