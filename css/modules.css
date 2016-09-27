@@ -8,11 +8,29 @@
 	top: 0;
 	left: 0;
 	background: #fff;
-	& .exit {
+	&__exit {
 		cursor: pointer;
 		position: fixed;
 		top: 10px;
-		right: 10px;
+		right: 20px;
+		z-index: 2;
+	}
+	&__content {
+		width: 80vw;
+		height: 100vh;
+		box-sizing: border-box;
+	}
+	&__summary {
+		width:20vw;
+		height: 100vh;
+		padding: 20px;
+		background: #fff;
+		position: absolute;
+		top: 0;
+		right:0;
+		z-index:1;
+		border-left: 1px solid #ccc;
+		box-sizing: border-box;
 	}
 }
 
@@ -40,7 +58,7 @@
 	}
 	&--animate {
 		& .revealer__layer {
-			animation: anim-effect-3-1 1s cubic-bezier(0.550, 0.055, 0.675, 0.190) forwards;
+			animation: anim-effect-3-1 .7s cubic-bezier(0.550, 0.055, 0.675, 0.190) forwards;
 			&:nth-child(2) {
 				animation-name: anim-effect-3-2;
 			}

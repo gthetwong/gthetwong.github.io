@@ -59,7 +59,9 @@ gulp.task('bundle', function(cb){
 	gulp.src(['jspm_packages/system.js', 'config.js'])
 	.pipe(gulp.dest('build/'));
 	var builder = new Builder('./', 'config.js');
-	builder.bundle('js/index.js', 'build/js/bundle.js', { minify: true, mangle: true, sourceMaps: 'inline', runtime: false})
+	//mangle was making it hard to debug
+	// builder.bundle('js/index.js', 'build/js/bundle.js', { minify: true, mangle: true, sourceMaps: 'inline', runtime: false})
+	builder.bundle('js/index.js', 'build/js/bundle.js', { sourceMaps: 'inline', runtime: false})
 	.then(function(){
 		console.log('Website Build Complete');
 		cb(null);
@@ -84,7 +86,8 @@ gulp.task('projects', function(cb){
 			.pipe(postcss(processors))
 			.pipe(gulp.dest('build/' + projectFolder));
 		// bundle project scripts
-		builder.bundle(projectFolder + '/*.js', 'build/' + projectFolder + '/index.js', { minify: true, mangle: true, sourceMaps: 'inline', runtime: false})
+		// builder.bundle(projectFolder + '/*.js', 'build/' + projectFolder + '/index.js', { minify: true, mangle: true, sourceMaps: 'inline', runtime: false})
+		builder.bundle(projectFolder + '/*.js', 'build/' + projectFolder + '/index.js', {  sourceMaps: 'inline', runtime: false})
 		.then(function(){
 			console.log('Project: ' + folder + ' – completed');
 			callback(null);

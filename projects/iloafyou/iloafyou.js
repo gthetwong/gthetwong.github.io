@@ -1,8 +1,13 @@
 var THREE = require('three');
 require('three/examples/js/controls/OrbitControls');
-module.exports.inject = function(){
+module.exports.title = 'I Loaf You';
+module.exports.summary = function(){
+	var el = document.createDocumentFragment();
+	var contents = '<h1> Some text </h1> <p>';
+};
+module.exports.main = function(){
 	var scene = new THREE.Scene();
-	var container = document.body.querySelector('.frame');
+	var container = document.createElement('div');
 	var renderer = new THREE.WebGLRenderer();
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	renderer.setClearColor( 0xffffff, 1);
@@ -28,11 +33,10 @@ module.exports.inject = function(){
 		bread.rotation.x = .4;
 		bread.position.y = -2;
 	});
-
 	var render = function () {
 		requestAnimationFrame(render);
 		renderer.render(scene, camera);
 	};
 	render();
-
+	return container;
 };

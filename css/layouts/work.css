@@ -12,12 +12,15 @@
 			background: #fff;
 			border: 1px solid #ccc;
 			box-sizing: border-box;
+			cursor: pointer;
+
 			& .title {
 				position: absolute;
 				bottom: 0;
 				right: 0;
 				padding: 2em;
 				font-size: 24px;
+				cursor: pointer;
 			}
 		}
 		&__item:nth-child(2n){
