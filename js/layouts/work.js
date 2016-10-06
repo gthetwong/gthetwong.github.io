@@ -47,11 +47,11 @@ module.exports = Backbone.Cord.View.extend({
 	},
 	generateFrame: function(project){
 		return this._el('.frame',
-			this._el('i.fa.fa-times.fa-2x.frame__exit'),
+			this._el('i.fa.fa-arrow-right.frame__exit'),
 			this._el('.frame__content', project.main()),
 			this._el('.frame__summary',
-				this._el('h1.summary__title', project.title),
-				this._el('.summary__description').appendChild(project.summary()))
+				this._el('h2.summary__title', project.title),
+				this._el('.summary__description', project.summary))
 		);
 	},
 	openProject: function(projectName){

@@ -3,7 +3,10 @@
 		lost-column: 3/8;
 		position: relative;
 		top: 50px;
+		left: 0px;
 		z-index: 1;
+		opacity: 0;
+		animation: slide-in-left 1s ease .5s forwards;
 		& h1 {
 			font-size: 104px;
 			margin: 0;
@@ -22,9 +25,23 @@
 	&__photo {
 		lost-column: 5/8;
 		lost-offset: -2/8;
+		height: 900px;
+		margin-top: -140px;
 		position: relative;
-		top: -50px;
-		left: 20px;
-		margin-top: -100px;
+		top: 0;
+		background-image: url('../assets/background.jpg');
+		background-position: center;
+		background-size: 105%;
+		animation: slide-in-right 1s ease .5s forwards;
+	}
+	&.loading {
+		& .header__title {
+			left: -500px;
+			opacity: 0;
+		}
+		& .header__photo {
+			left: 500px;
+			opacity: 0;
+		}
 	}
 }

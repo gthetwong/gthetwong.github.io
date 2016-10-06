@@ -17,7 +17,22 @@ var App = Backbone.Cord.View.extend({
 			v(about),
 			v(work)
 		);
+	},
+	render: function(){
+		this.ready = true;
+	},
+	properties: {
+		ready: {
+			set: function(value){
+				if (value)
+					for (child in this.subviews) {
+						this.subviews[child].ready = true;
+					}
+			},
+			value: false
+		}
 	}
 });
-
-document.body.appendChild(new App().el);
+var app = new App();
+document.body.appendChild(app.el);
+app.render();

@@ -1,10 +1,7 @@
 var THREE = require('three');
 require('three/examples/js/controls/OrbitControls');
 module.exports.title = 'I Loaf You';
-module.exports.summary = function(){
-	var el = document.createDocumentFragment();
-	var contents = '<h1> Some text </h1> <p>';
-};
+module.exports.summary = 'Experimental project with Three.js and Blender.';
 module.exports.main = function(){
 	var scene = new THREE.Scene();
 	var container = document.createElement('div');
@@ -36,6 +33,10 @@ module.exports.main = function(){
 	var render = function () {
 		requestAnimationFrame(render);
 		renderer.render(scene, camera);
+	};
+	window.onresize = function(){
+		renderer.setSize(window.innerWidth, window.innerHeight);
+		render();
 	};
 	render();
 	return container;
