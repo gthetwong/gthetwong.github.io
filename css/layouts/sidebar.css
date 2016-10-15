@@ -23,7 +23,7 @@
 		box-shadow: 0 0 0 1px var(--dark-grey);
 		cursor: pointer;
 		transition: all .125s ease;
-		animation: pop-in 1s ease;
+		animation: pop 1s ease;
 
 		&::after {
 			pointer-events: none;
@@ -54,6 +54,6 @@
 		}
 	}
 	@media screen and (max-width:1550px){
-		transform: translate(-100%);
+		display: none;
 	}
 }

@@ -1,6 +1,7 @@
 .about {
 	position: relative;
 	&__wrapper {
+		margin-top: 50px;
 		lost-column: 5/8;
 		& .tagline {
 			lost-column: 3/5 1;
@@ -10,7 +11,7 @@
 			lost-column: 4/5;
 			& h2 {
 				margin: 0;
-				font-size: 45px;
+				font-size: 35px;
 				font-weight: 300;
 			}
 			& .blockquote {
@@ -25,7 +26,7 @@
 		lost-column: 3/8 1;
 		position: absolute;
 		right: 0;
-		top: 30%;
+		top: 50px;
 		padding-left: 50px;
 		box-sizing: border-box;
 		& h1 {
@@ -57,7 +58,7 @@
 	}
 	&__lead {
 		lost-column: 1/8;
-		height: 1280px;
+		height: 1080px;
 		position: relative;
 		right: 150px;
 		background: #f1f1f1;

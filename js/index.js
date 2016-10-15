@@ -11,26 +11,13 @@ var work = require('js/layouts/work');
 var App = Backbone.Cord.View.extend({
 	className: 'app',
 	el: function(h, v){
-		return h('main',
+		return h('',
 			v(sidebar),
-			v(header),
-			v(about),
-			v(work)
+			h('main',
+				v(header),
+				v(about),
+				v(work))
 		);
-	},
-	render: function(){
-		this.ready = true;
-	},
-	properties: {
-		ready: {
-			set: function(value){
-				if (value)
-					for (child in this.subviews) {
-						this.subviews[child].ready = true;
-					}
-			},
-			value: false
-		}
 	}
 });
 var app = new App();

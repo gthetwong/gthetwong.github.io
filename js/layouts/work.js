@@ -16,7 +16,7 @@ module.exports = Backbone.Cord.View.extend({
 	},
 	el: function(h, v){
 		return h('section.work',
-			h('h1', 'WORK'),
+			h('h3', 'WORK'),
 			h('.grid',
 				h('.grid__item', {'data-project': 'iloafyou', 'data-side': 'right'},
 					h('.title', 'I Loaf You')),

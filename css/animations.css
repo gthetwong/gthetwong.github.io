@@ -34,7 +34,7 @@
 	}
 }
 
-@keyframes pop-in {
+@keyframes pop {
 	0% {
 		opacity: 0;
 		font-size: 0px;
@@ -48,16 +48,30 @@
 	}
 }
 
+@keyframes blink {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+
+}
+
 @keyframes slide-in-left {
 	0% {
 		left: -800px;
 		opacity: 0;
 	}
 	100% {
-		left: 0;
+		left: 0	;
 		opacity: 1;
 	}
 }
+
 @keyframes slide-in-right {
 	0% {
 		left: 500px;
