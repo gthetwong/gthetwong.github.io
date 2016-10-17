@@ -34,6 +34,15 @@
 	}
 }
 
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 @keyframes pop {
 	0% {
 		opacity: 0;
@@ -66,19 +75,35 @@
 		left: -800px;
 		opacity: 0;
 	}
-	100% {
+	75% {
 		left: 0	;
+	}
+	100% {
 		opacity: 1;
 	}
 }
 
+@keyframes color-change{
+	/*"borrowed" from vert.io*/
+  0				 {color: #000000;}
+  14.666666667%  {color: #2a00ff;}
+  29.333333334%  {color: #28D7FF;}
+  45.000000001%  {color: #9EE216;}
+  60.666666668%  {color: #ff6500;}
+  75.333333335%  {color: #ffa500;}
+  90%            {color: #ff00ae;}
+  100%			 {color: #000000;}
+}
+
 @keyframes slide-in-right {
 	0% {
-		left: 500px;
+		left: 800px;
 		opacity: 0
 	}
+	75% {
+		left: 0	;
+	}
 	100% {
-		left: 20px;
 		opacity: 1;
 	}
 }

@@ -1,31 +1,34 @@
 .work {
-	position: relative;
-	top: -250px;
-	& .grid {
-		lost-column: 3/4;
-		lost-offset: -1/8;
-		lost-utility: clearfix;
-		&__item {
-			position: relative;
-			height: 300px;
-			lost-column: 1/2 2 0px;
-			background: #fff;
-			border: 1px solid #ccc;
-			box-sizing: border-box;
-			cursor: pointer;
+	@media screen and (min-width:1550px){
 
-			& .title {
-				position: absolute;
-				bottom: 0;
-				right: 0;
-				padding: 2em;
-				font-size: 24px;
+		position: relative;
+		top: -250px;
+		& .grid {
+			lost-column: 3/4;
+			lost-offset: -1/8;
+			lost-utility: clearfix;
+			&__item {
+				position: relative;
+				height: 300px;
+				lost-column: 1/2 2 0px;
+				background: #fff;
+				border: 1px solid #ccc;
+				box-sizing: border-box;
 				cursor: pointer;
+
+				& .title {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					padding: 2em;
+					font-size: 24px;
+					cursor: pointer;
+				}
 			}
-		}
-		&__item:nth-child(2n){
-			top: 100px;
-			left: -1px;
+			&__item:nth-child(2n){
+				top: 100px;
+				left: -1px;
+			}
 		}
 	}
 }

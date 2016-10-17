@@ -1,67 +1,73 @@
 .about {
-	position: relative;
-	&__wrapper {
-		margin-top: 50px;
-		lost-column: 5/8;
-		& .tagline {
-			lost-column: 3/5 1;
-			text-align: center;
-		}
-		& .bio {
-			lost-column: 4/5;
-			& h2 {
-				margin: 0;
-				font-size: 35px;
-				font-weight: 300;
+	background: #fff;
+
+	@media screen and (min-width:1550px){
+		position: relative;
+		&__wrapper {
+			margin-top: 50px;
+			lost-column: 5/8;
+			position: relative;
+			animation: slide-in-left 1s ease;
+			& .tagline {
+				lost-column: 3/5 1;
+				text-align: center;
 			}
-			& .blockquote {
-				margin: 0;
-				border-left: 10px solid #ccc;
-				padding-left: 20px;
-				font-size: 18px;
-			}
-		}
-	}
-	&__skills {
-		lost-column: 3/8 1;
-		position: absolute;
-		right: 0;
-		top: 50px;
-		padding-left: 50px;
-		box-sizing: border-box;
-		& h1 {
-			margin: 0;
-		}
-		& .divider {
-			width: 40%;
-			height: 2px;
-			background: #ccc;
-			margin: 35px 0;
-		}
-		& .skills {
-			padding: 0;
-			margin: 0;
-			& .skill {
-				list-style-type: none;
-				&::before {
-					content: '';
-					display:inline-block;
-					width: 0;
-					height: 0;
-					border-bottom: 5px solid transparent;
-					border-left: 5px solid #ccc;
-					border-top: 5px solid transparent;
-					margin-right: 10px;
+			& .bio {
+				lost-column: 4/5;
+				& h2 {
+					margin: 0;
+					font-size: 35px;
+					font-weight: 300;
+				}
+				& .blockquote {
+					margin: 0;
+					border-left: 10px solid #ccc;
+					padding-left: 20px;
+					font-size: 18px;
 				}
 			}
 		}
-	}
-	&__lead {
-		lost-column: 1/8;
-		height: 1080px;
-		position: relative;
-		right: 150px;
-		background: #f1f1f1;
-		z-index: -1;
+		&__skills {
+			lost-column: 3/8 1;
+			position: absolute;
+			right: 0;
+			top: 30%;
+			padding-left: 50px;
+			box-sizing: border-box;
+			& h1 {
+				margin: 0;
+			}
+			& .divider {
+				width: 40%;
+				height: 2px;
+				background: #ccc;
+				margin: 35px 0;
+			}
+			& .skills {
+				padding: 0;
+				margin: 0;
+				& .skill {
+					list-style-type: none;
+					&::before {
+						content: '';
+						display:inline-block;
+						width: 0;
+						height: 0;
+						border-bottom: 5px solid transparent;
+						border-left: 5px solid #ccc;
+						border-top: 5px solid transparent;
+						margin-right: 10px;
+					}
+				}
+			}
+		}
+		&__lead {
+			lost-column: 1/8;
+			height: 1080px;
+			position: relative;
+			right: 150px;
+			background: #f1f1f1;
+			z-index: -1;
+		}
 	}
 }

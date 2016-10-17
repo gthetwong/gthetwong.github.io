@@ -14,12 +14,12 @@
 		z-index: 2;
 	}
 	&__content {
-		lost-column: 9/12;
+		/*lost-column: 9/12;*/
 		height: 100%;
 		box-sizing: border-box;
 	}
 	&__summary {
-		lost-column: 3/12 ;
+		/*lost-column: 3/12 ;*/
 		height: 100%;
 		padding: 20px;
 		background: #fff;
