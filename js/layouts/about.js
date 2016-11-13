@@ -4,7 +4,7 @@ module.exports = Backbone.Cord.View.extend({
 	className: 'about',
 	el: function(h, v){
 		return h('section',
-			h('#wrapper.about__wrapper',
+			h('.about__wrapper',
 				h('.tagline',
 					h('h3', 'A bit about me')),
 				h('.bio',
@@ -39,15 +39,5 @@ module.exports = Backbone.Cord.View.extend({
 					h('li.skill', 'FramerJS')
 				)
 			));
-	},
-	properties: {
-		viewHeight: {
-			set: function(value){
-				this._viewHeight = value + 'px';
-			}
-		}
-	},
-	styles: {
-		marginTop: '{_viewHeight}'
 	}
 });

@@ -7,6 +7,7 @@
 		position: fixed;
 		top: 0;
 		left: 0;
+		text-align: center;
 		border-right: 1px solid var(--dark-grey);
 		box-sizing: border-box;
 		background: #fff;
@@ -23,6 +24,7 @@
 			font-size: 20px;
 			text-align: center;
 			line-height: 50px;
+			text-decoration: none;
 			vertical-align: middle;
 			border-radius: 100%;
 			box-shadow: 0 0 0 1px var(--dark-grey);
@@ -51,10 +53,25 @@
 			&:hover {
 				font-size: 35px;
 				border: 0px;
-				transition: font-size .15s ease-out;
+				transition: font-size .15s, color .5s, background .5s ease-out;
 				box-shadow: 0 0 0 0 #fff;
 				&::after {
 					animation: sonarEffect .5s ease-out;
+				}
+				&.fa-envelope {
+					color: #DB3A34;
+				}
+				&.fa-twitter {
+					color: #fff;
+					background: #1DA1F2;
+				}
+				&.fa-github {
+					color: #fff;
+					background: #000;
+				}
+				&.fa-linkedin {
+					color: #fff;
+					background: #0077B5;
 				}
 			}
 		}

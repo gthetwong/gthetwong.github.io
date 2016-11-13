@@ -1,12 +1,17 @@
 /*transform: translateZ($distance * $perspective * 1px) scale(abs($distance - 1));*/
 .header {
-	position: fixed;
 	display: flex;
 	align-items: center;
+	top: 0;
 	width: 100%;
 	color: #000;
-	z-index: -1;
+	background: #fff;
 	animation: color-change 36s 2.5s infinite;
+	z-index: 1;
+	&.scrolled {
+		animation: slide-up 1.5s ease-out .5s forwards !important;
+	}
+
 	&__title {
 		position: relative;
 		lost-column: 6/7 0;
@@ -17,8 +22,9 @@
 
 	@media screen and (min-width: 1550px){
 		display: block;
-		animation: none;
 		position: relative;
+		color: var(--dark-grey);
+		animation: none;
 		&__title {
 			lost-column: 3/8;
 			position: relative;
@@ -29,9 +35,9 @@
 		}
 		&__photo {
 			lost-column: 5/8;
-			lost-offset: -2/8;
+			lost-offset: -5/16;
 			height: 900px;
-			margin-top: -150px;
+			margin-top: -250px;
 			position: relative;
 			top: 0px;
 			background-image: url('../assets/background.jpg');

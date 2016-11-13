@@ -1,13 +1,14 @@
 .about {
-	background: #fff;
+	background-color: #fff;
+	opacity: 0;
 
 	@media screen and (min-width:1550px){
 		position: relative;
+		background-color: transparent;
 		&__wrapper {
 			margin-top: 50px;
 			lost-column: 5/8;
 			position: relative;
-			animation: slide-in-left 1s ease;
 			& .tagline {
 				lost-column: 3/5 1;
 				text-align: center;
@@ -67,7 +68,7 @@
 			position: relative;
 			right: 150px;
 			background: #f1f1f1;
-			z-index: -1;
+			z-index: 0;
 		}
 	}
 }

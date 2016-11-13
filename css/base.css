@@ -1,7 +1,6 @@
 @lost gutter 20px;
 :root {
-	--dark-grey: #5E6472;
-	/*--dark-grey: #000;*/
+	--dark-grey: #454D5F;
 }
 * {
 	/*border: 1px solid grey;*/
@@ -19,7 +18,11 @@ html, body {
 	-moz-osx-font-smoothing: grayscale;
 }
 body {
-	overflow-x: hidden;
+	overflow-y: hidden;
+	@media screen and (min-width: 1550px){
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
 }
 
 main {
