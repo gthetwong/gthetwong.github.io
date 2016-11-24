@@ -1,0 +1,7 @@
+.play {
+	@media screen and (min-width:1550px){
+		& h3 {
+			text-align: right;
+		}
+	}
+}
