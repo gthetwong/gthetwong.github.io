@@ -15,39 +15,72 @@ var App = Backbone.Cord.View.extend({
 		return h('',
 			v(sidebar, "#sidebar"),
 			h('main',
-				v(header, '#header', {onclick: 'scrollHeader'}),
+				v(header, '#header.active'),
 				v(about, '#about'),
 				v(work, '#work'),
 				v(play, '#play'))
 		);
 	},
 	initialize: function(){
-		this.viewHeight = window.innerHeight;
+		// this.viewHeight = window.innerHeight;
 		window.addEventListener('resize', _.throttle(function(e){
 			// if (Math.abs(this.viewHeight - window.innerHeight) > 60 && window.innerWidth < 600){
-			if (window.innerWidth < 600){
-				this.viewHeight = window.innerHeight;
-			}
+			// // if (window.innerWidth < 600){
+			// 	this.viewHeight = window.innerHeight;
+			// }
 		}.bind(this), 500));
-		// window.addEventListener('mousewheel', this.scrollHeader.bind(this));
-		// window.addEventListener('scroll', this.scrollHeader.bind(this));
+		window.addEventListener('mousewheel', this.scrollView.bind(this));
+		// window.addEventListener('touchend', this.scrollHeader.bind(this));
 	},
 	properties: {
 		viewHeight: {
 			set: function(value) {
-				this.header.el.style.height = value + 'px';
-				// if( window.innerWidth < 1550)
-				// 	this.about.el.style.marginTop = value + 'px';
-				// else
-				// 	this.about.el.style.marginTop = 'auto';
+				this.header.el.style.height = value + 60 + 'px';
 				this._viewHeight = value;
 			}
-		}
+		},
+		active: {
+			set: function(){
+
+			}
+		},
+		delta: '',
+		currentSlide: 0
 	},
-	scrollHeader: _.throttle( function(e){
-		if(window.innerWidth < 600)
-			alert('scrolling');
-	}, 500)
+	showSlide() {
+		// http://www.hugeinc.com/ideas/perspective/scroll-jacking-on-hugeinc
+		this.delta = 0;
+		_.each(this.subviews, function(view, index){
+			if (index >= this.currentSlide)
+				view.el.classList.toggle('active');
+		}, this);
+		return this;
+	},
+	scrollView: function(e){
+		if (e.originalEvent.detail < 0 || e.originalEvent.wheelDelta > 0) {
+			this.delta--;
+			if (Math.abs(this.delta) >= scrollThreshold)
+				this.prevSlide();
+		} else {
+			this.delta++;
+			if (this.delta >= scrollThreshold)
+				this.nextSlide();
+		}
+		// Prevent page from scrolling
+		return false;
+	},
+	prevSlide: function() {
+		thiis.currentSlide--;
+		if (thiis.currentSlide < 0)
+			thiis.currentSlide = 0;
+		this.showSlide();
+	},
+	nextSlide: function() {
+		this.currentSlide++;
+		if (this.currentSlide > numSlides)
+			this.currentSlide = numSlides;
+		this.showSlide();
+	}
 });
 window.app = new App();
 document.body.appendChild(app.el);

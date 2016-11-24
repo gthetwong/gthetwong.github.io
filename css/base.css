@@ -9,6 +9,7 @@
 
 html, body {
 	width: 100%;
+	height: 100%;
 	margin: 0 auto;
 	padding: 0;
 	font-family: var(--font-family);
@@ -18,7 +19,6 @@ html, body {
 	-moz-osx-font-smoothing: grayscale;
 }
 body {
-	overflow-y: hidden;
 	@media screen and (min-width: 1550px){
 		overflow-y: auto;
 		overflow-x: hidden;
@@ -27,12 +27,26 @@ body {
 
 main {
 	lost-center: 1280px;
+	height: 100%;
 }
 
 section {
 	lost-utility: clearfix;
-	padding: 1em;
+	/*padding: 1em;*/
 	box-sizing: border-box;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	transition: height 0.9s ease-in-out;
+	&.active {
+		height: 100%;
+	}
+	@media screen and (min-width: 1550px) {
+		position: static;
+	}
 }
 
 h1 {
