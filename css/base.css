@@ -28,24 +28,24 @@ body {
 main {
 	lost-center: 1280px;
 	height: 100%;
-}
-
-section {
-	lost-utility: clearfix;
-	/*padding: 1em;*/
-	box-sizing: border-box;
-	overflow: hidden;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 0;
-	transition: height 0.9s ease-in-out;
-	&.active {
-		height: 100%;
-	}
-	@media screen and (min-width: 1550px) {
-		position: static;
+	& section {
+		box-sizing: border-box;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 0;
+		transition: height 0.9s ease-in-out;
+		&.active {
+			height: 100%;
+		}
+		@media screen and (min-width: 1550px) {
+			lost-utility: clearfix;
+			height: auto;
+			position: static;
+			overflow: visible;
+		}
 	}
 }
 

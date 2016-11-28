@@ -13,6 +13,7 @@
 			margin-top: 50px;
 			lost-column: 5/8;
 			position: relative;
+			z-index: 1;
 			& .tagline {
 				lost-column: 3/5 1;
 				text-align: center;
