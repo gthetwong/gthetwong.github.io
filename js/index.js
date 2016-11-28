@@ -108,13 +108,17 @@
 			// 	this..previousTarget.classList.remove('no-animation');
 			if (this.percentage >= this.dragThreshold) {
 				//if the percent change is over the threshold, slide up
+				this.target.style.height = '';
 				this.nextSlide();
 			} else if (Math.abs(this.percentage) >= this.dragThreshold) {
 				//check if it's negative, and see if it passes the threshold
+				this.target.style.height = '';
+				this.previousTarget.style.height = '';
 				this.prevSlide();
 			} else {
 				//otherwise, do nothing
 				this.showSlide();
+
 			}
 			this.percentage = 0;
 		}
