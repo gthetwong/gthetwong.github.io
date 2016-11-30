@@ -40,7 +40,7 @@
 			active: '',
 			delta: '',
 			currentSlide: 0,
-			dragThreshold: 0.15,// "percentage" to drag before engaging
+			dragThreshold: 0.25,// "percentage" to drag before engaging
 			dragStart: {
 				value: null
 			},	 // used to determine touch / drag distance
@@ -80,8 +80,6 @@
 			this.dragStart = touchPoint.clientY;
 			this.target = this.slides[this.currentSlide];
 			this.previousTarget = this.slides[this.currentSlide -1];
-			//this.target.classList.add('no-animation');
-			//this.previousTarget.classList.add('no-animation');
 		},
 		touchMove: function(e) {
 			e.preventDefault();
@@ -90,7 +88,6 @@
 			var touchPoint = e.touches[0];
 			this.delta = this.dragStart - touchPoint.clientY;
 			this.percentage = this.delta/window.innerHeight;
-
 			if (this.percentage > 0) {
 				this.target.style.height = (100 - (this.percentage * 100)) + '%';
 				if (this.previousTarget)
@@ -99,27 +96,24 @@
 				this.previousTarget.style.height = (-this.percentage * 100) + '%';
 				this.target.style.height = '';
 			}
+			//sense for upper bounds
+			//sense for lower bounds
+			//if it's upper bounds, and there's no previous slide then don't prevent default;
+			//if it's lower bounds and there's a next slide, call slide down, otherwise scroll that div
 			return false;
 		},
 		touchEnd: function(e) {
 			this.dragStart = null;
-			// this.target.classList.remove('no-animation');
-			// if (this.previousTarget)
-			// 	this..previousTarget.classList.remove('no-animation');
 			if (this.percentage >= this.dragThreshold) {
-				//if the percent change is over the threshold, slide up
-				this.target.style.height = '';
 				this.nextSlide();
 			} else if (Math.abs(this.percentage) >= this.dragThreshold) {
-				//check if it's negative, and see if it passes the threshold
-				this.target.style.height = '';
-				this.previousTarget.style.height = '';
 				this.prevSlide();
 			} else {
-				//otherwise, do nothing
 				this.showSlide();
-
 			}
+			this.target.style.height = '';
+			if (this.previousTarget)
+				this.previousTarget.style.height = '';
 			this.percentage = 0;
 		}
 	});
