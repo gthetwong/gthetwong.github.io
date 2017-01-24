@@ -8,6 +8,55 @@ head
 	link(type="text/css", rel="stylesheet", href="https://cdn.jsdelivr.net/fontawesome/4.6.3/css/font-awesome.min.css")
 	link(href="css/app.css", rel="stylesheet", type="text/css")
 body
+	.app
+		.sidebar
+			a.sidebar__icon.fa.fa-envelope(href= 'mailto:grahamtyler.wong@gmail.com?subject=Hey%20there%2C%20let%27s%20get%20in%20touch', target= '_blank', rel='noopener noreferrer')
+			a.sidebar__icon.fa.fa-twitter(href='//twitter.com/grahamtylerwong', target='_blank', rel='noopener noreferrer')
+			a.sidebar__icon.fa.fa-github(href='//github.com/gthetwong', target='_blank', rel='noopener noreferrer')
+			a.sidebar__icon.fa.fa-linkedin(href='//linkedin.com/in/grahamtylerwong', target='_blank', rel='noopener noreferrer')
+		main
+			section.header.active
+				.header__title
+					h1 Hi, I'm Graham.
+					h3 I love making things for the web.
+					h4 It's a good thing I do it for a living.
+				.header__photo
+			section.about.active
+				.about__wrapper
+					.tagline
+						h3 A bit about me
+					.bio
+						h4 I've been making things as long as I can remember...
+						.blockquote
+							p I’ve been making and taking things apart for as long as I can remember. I’m constantly trying to find new ways to keep that curiousity alive and unify my interests in art and technology. I’m super passionate about understanding complex systems, Don Norman and User Centered Design, and pretty much all things web.
+							p Most of my work these days is digital, but I still occasionally make things by hand. You can see some of my work below!
+				.about__lead
+				.about__skills
+					h4 Skills
+					ul.skills
+						li.skill User Research
+						li.skill Rapid Prototyping
+						li.skill Usability Testing
+						li.skill Front-End & MVC Architecture
+						li.skill BEM & SMACSS Patterns
+						li.skill Responsive Web Design
+						li.skill Build System
+					.divider
+					h4 Tools
+					ul.skills
+						l.skill HTML5
+						li.skill CSS3/SCSS/PostCSS
+						li.skill JS(ECMA5/6)
+						li.skill BackboneJS
+						li.skill Gulp
+						li.skill Bower
+						li.skill NPM
+						li.skill JSPM
+						li.skill Sketch 3
+						li.skill FramerJ
+			section.work.active
+			section.play.active
+
 	script(type="text/javascript", src="system.js")
 	script(type="text/javascript", src="config.js")
 	script(type="text/javascript", src="js/bundle.js")
